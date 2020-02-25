@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Notas Labos</title>
     <link rel="stylesheet" href="./css/notas.css">
   </head>
@@ -22,7 +22,7 @@
           <div id="seleccionar-items" class="container">
             <div class="fila-labo compu">
               <div class="check-group">
-                <input type="checkbox" name="check-note-compu" value="" onclick="checkAdmComputo()">
+                <input type="checkbox" class="check-button" name="check-note-compu" value="" onclick="checkAdmComputo()">
                 <label for="check-note-compu">Laboratorio de Computo</label>
               </div>
               <hr>
@@ -34,7 +34,7 @@
             </div>
             <div class="fila-labo mante">
               <div class="check-group">
-                <input type="checkbox" name="check-note-mante" value="" onclick="checkMateriasMante()">
+                <input type="checkbox" class="check-button" name="check-note-mante" value="" onclick="checkMateriasMante()">
                 <label for="check-note-mante">Laboratorio de Mantenimiento</label>
               </div>
               <hr>
@@ -47,7 +47,21 @@
                 </ul>
               </div>
             </div>
-            
+            <div class="fila-labo desa">
+              <div class="check-group">
+                <input type="checkbox" class="check-button" name="check-desa" value="" onclick="checkMateriasDesa()">
+                <label for="check-desa">Laboratorio de Desarrollo</label>
+              </div>
+              <p></p>
+              <hr>
+              <div class="check-group">
+                <ul>
+                  <li>Administrador Desarrollo</li>
+                  <li>Auxiliar Desarrollo</li>
+                  <li>Auxiliar de Terminal</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div class="parte">
