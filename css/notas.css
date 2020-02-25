@@ -92,9 +92,10 @@ button {
 }
 
 input {
-  width: 9%;
+  width: 13%;
   font-size: 1.5rem;
   text-align: center;
+  height: 1.2rem;
 }
 
 /* Para quitar las arrow of input type number */

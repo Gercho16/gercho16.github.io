@@ -73,5 +73,5 @@ function isNumberKey(e) {
 // navigator.userAgent.match(/Android/i)
 if (navigator.userAgent.match(/Android/i)) {
   alert('hola')
-
+  document.querySelector('#nota-meritos').type = 'number'
 }
