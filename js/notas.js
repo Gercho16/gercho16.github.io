@@ -69,3 +69,8 @@ function isNumber(e) {
 function isNumberKey(e) {
   console.log(e);
 }
+
+// navigator.userAgent.match(/Android/i)
+if (navigator.userAgent.match(/Android/i)) {
+  document.querySelector('#nota-meritos').type = 'algo'
+}
