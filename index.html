@@ -3,7 +3,6 @@
 
 <head lang="es">
     <meta charset="UTF-8" />
-    <meta name="google-site-verification" content="K_vbFsWSBhZQHR0uZllTmu9N5XyxIAcDL5zfwXqop0Q" />
     <title>Hola soy Fernando Rojas</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -194,10 +193,10 @@
             if ( email.value == '' ){
                 alert('Escribe tu correo en el campo de arriba xD');
             } else {
-                window.open('mailto:' + email.value + '?subject=Creemos algo&body=Hola como estas? :D'); 
+                window.open('mailto:' + email.value + '?subject=Creemos algo&body=Hola como estas? :D');
             }
         }
-        
+
         const menu = document.querySelector('.menu');
         const burgerButton = document.querySelector('#burger-menu');
         const ipad = window.matchMedia('screen and (max-width: 767px)')
@@ -208,7 +207,7 @@
         // }
         // Lo de abajo es el equivalente de arriba, para validar el tamaño de la pantalla
         validation(ipad);
-        
+
         function validation(event) {
             if (event.matches) {
                 burgerButton.addEventListener('click', mostrar);

@@ -1,0 +1,38 @@
+
+h1 {
+  text-decoration: underline;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h1, p, h2{
+  text-align: center;
+}
+
+ol {
+  width: 40%;
+  margin: auto;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+
+}
+
+.text-danger {
+  color: red;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.nota {
+  text-align:center;
+  margin: 4px
+}
