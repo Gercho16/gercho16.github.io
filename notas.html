@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/notas.css">
   </head>
   <body>
-    <h1>Calculadora de notas para Auxiliar de servicio Laboratorio de Informatica y Sistemas</h1>
+    <h1>Calculadora de notas para Auxiliar de Servicio</h1>
     <p>La siguiente calcula las notas para de Auxiliares y administrador de los laboratorios de:</p>
     <ol>
       <li class="compu">Laboratorio de Computación</li>
@@ -17,106 +17,115 @@
     <h2>Llene los campos del formulario, para poder calcular sus notas</h2>
     <section id="formulario">
       <form class="" action="index.html" method="post">
-        <p>Seleccione los laboratorios que se postulo</p>
-        <div class="check-group">
-          <div class="compu">
-            <input type="checkbox" name="check-computo" value="">
-            <label for="check-computo">Laboratorio Computo</label><br>
-          </div>
-          <div class="mante">
-            <input type="checkbox" name="check-mantenimiento" value="">
-            <label for="check-mantenimiento">Laboratorio de Mantenimiento</label><br>
-          </div>
-          <div class="desa">
-            <input type="checkbox" name="check-desarrollo" value="">
-            <label for="check-Desarrollo">Laboratorio de Desarrollo</label><br>
-          </div>
-        </div>
-        <p>Alternativamente seleccione los labos especificos que desea saber sus notas</p>
-        <div id="seleccionar-items" class="container">
-          <div class="fila-labo">
-            <p>Laboratorio de Computo</p>
-            <div class="check-group compu">
-              <input type="checkbox" name="check-computo" value="">
-              <label for="check-computo">Administrador Computo</label><br>
+        <div class="parte">
+          <p>Seleccione los laboratorios que se postulo</p>
+          <div id="seleccionar-items" class="container">
+            <div class="fila-labo compu">
+              <div class="check-group">
+                <input type="checkbox" name="check-note-compu" value="" onclick="checkAdmComputo()">
+                <label for="check-note-compu">Laboratorio de Computo</label>
+              </div>
+              <hr>
+              <div class="check-group">
+                <ul>
+                  <li>Administrador Computo</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="fila-labo">
-            <p>Laboratorio de Mantenimiento</p>
-            <div class="check-group mante">
-              <input type="checkbox" name="check-mante-adm-soft" value="">
-              <label for="check-mante-adm-soft">Administrador de Software</label><br>
-              <input type="checkbox" name="check-mante-adm-hard" value="">
-              <label for="check-mante-adm-hard">Administrador de Hardware</label><br>
-              <input type="checkbox" name="check-mante-aux-soft" value="">
-              <label for="check-mante-aux-soft">Auxiliar de Software</label><br>
-              <input type="checkbox" name="check-mante-aux-hard" value="">
-              <label for="check-mante-aux-hard">Auxiliar de Hardware</label><br>
+            <div class="fila-labo mante">
+              <div class="check-group">
+                <input type="checkbox" name="check-note-mante" value="" onclick="checkMateriasMante()">
+                <label for="check-note-mante">Laboratorio de Mantenimiento</label>
+              </div>
+              <hr>
+              <div class="check-group">
+                <ul>
+                  <li>Administrador de Software</li>
+                  <li>Administrador de Hardware</li>
+                  <li>Auxiliar de Software</li>
+                  <li>Auxiliar de Hardware</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="fila-labo">
-            <p>Laboratorio de Desarrollo</p>
-            <div class="check-group desa">
-              <input type="checkbox" name="check-desa-adm" value="">
-              <label for="check-desa-adm">Administrador Desarrollo</label><br>
-              <input type="checkbox" name="check-desa-aux" value="">
-              <label for="check-desa-aux">Auxiliar Desarrollo</label><br>
-              <input type="checkbox" name="check-desa-terminal" value="">
-              <label for="check-desa-terminal">Auxiliar de Terminal</label><br>
+            <div class="fila-labo desa">
+              <div class="check-group">
+                <input type="checkbox" name="check-desa" value="" onclick="checkMateriasDesa()">
+                <label for="check-desa">Laboratorio de Desarrollo</label>
+              </div>
+              <p></p>
+              <hr>
+              <div class="check-group">
+                <ul>
+                  <li>Administrador Desarrollo</li>
+                  <li>Auxiliar Desarrollo</li>
+                  <li>Auxiliar de Terminal</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        <p>Finalmente escriba los puntos que tenga</p>
-        <section>
-          <div class="">
-            <div class="nota">
-              <label for="linux">Nota Linux: </label>
-              <input type="number" id="nota-linux" name="linux" value="">
+        <div class="parte">
+          <p>Finalmente escriba los puntos que tenga</p>
+          <section>
+            <div class="">
+                <p class="text-danger">Seleccione al menos un laboratorio</p>
+              <div class="nota">
+                <label for="meritos">Meritos: </label>
+                <input type="text" id="nota-meritos" name="meritos" value="" maxlength="4" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota">
+                <label for="linux">Linux: </label>
+                <input type="number" id="nota-linux" name="linux" value="" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota" >
+                <label for="redes">Redes nivel intermedio: </label>
+                <input type="number" id="nota-redes" name="redes" value="" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota">
+                <label for="base"> Base de datos: </label>
+                <input type="number" id="nota-base" name="base" value="" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota">
+                <label for="progra"> programacion por internet: </label>
+                <input type="number" id="nota-progra" name="progra" value="" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota">
+                <label for="uml">Modelado aplicaciones web: </label>
+                <input type="number" id="nota-uml" name="uml" value="" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota">
+                <label for="ensamblaje"> Ensamblaje y mantenimiento de computadora: </label>
+                <input type="number" id="nota-ensamblaje" name="ensamblaje" value="" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota">
+                <label for="electronicaT"> Electronica aplicada(TEORICO): </label>
+                <input type="number" id="nota-electronicaT" name="electronicaT" value="" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota">
+                <label for="electronicaP"> Electronica aplicada(PRACTICO): </label>
+                <input type="number" id="nota-electronicaP" name="electronicaP" value="" onkeypress="return isNumber(event)">
+              </div>
+              <div class="nota">
+                <label for="didactica">Didactica: </label>
+                <input type="number" id="nota-didactica" name="didactica" value="" onkeypress="return isNumber(event)">
+              </div>
             </div>
-            <div class="nota" >
-              <label for="redes">Nota Redes nivel intermedio: </label>
-              <input type="number" id="nota-redes" name="redes" value="">
-            </div>
-            <div class="nota">
-              <label for="base">Nota Base de datos: </label>
-              <input type="number" id="nota-base" name="base" value="">
-            </div>
-            <div class="nota">
-              <label for="progra">Nota programacion por internet: </label>
-              <input type="number" id="nota-progra" name="progra" value="">
-            </div>
-            <div class="nota">
-              <label for="uml">Nota Modelado aplicaciones web: </label>
-              <input type="number" id="nota-uml" name="uml" value="">
-            </div>
-            <div class="nota">
-              <label for="ensamblaje">Nota Ensamblaje y mantenimiento de computadora: </label>
-              <input type="number" id="nota-ensamblaje" name="ensamblaje" value="">
-            </div>
-            <div class="nota">
-              <label for="electronicaT">Nota Electronica aplicada(TEORICO): </label>
-              <input type="number" id="nota-electronicaT" name="electronicaT" value="">
-            </div>
-            <div class="nota">
-              <label for="electronicaP">Nota Electronica aplicada(PRACTICO): </label>
-              <input type="number" id="nota-electronicaP" name="electronicaP" value="">
-            </div>
-            <div class="nota">
-              <label for="didactica">Nota Didactica: </label>
-              <input type="number" id="nota-didactica" name="didactica" value="">
-            </div>
-          </div>
-        </section>
-        <div class="container">
-          <button type="button" name="button">Calcular nota</button>
+          </section>
+        </div>
+        <div class="container parte">
+          <button type="button" name="button" >Calcular nota</button>
         </div>
       </form>
     </section>
     <section>
-      <div class="container" id="respuesta-notas">
+      <div class="container parte" id="respuesta-notas">
         <h2>Las respuestas son: </h2>
       </div>
     </section>
     <script type="text/javascript" src="./js/notas.js"></script>
+    <section id="footer">
+      <p>Pagina hecha por: <a href="./index.html">codingFer</a></p>
+      <p>, 2020 Copyright © Todos los Derechos Reservado</p>
+    </section>
   </body>
 </html>

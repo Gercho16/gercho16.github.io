@@ -1,25 +1,62 @@
+body {
+  background: #101c28;
+  color: white;
+}
 
 h1 {
   text-decoration: underline;
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5em;
 }
 
 h1, p, h2{
   text-align: center;
 }
 
+p, label, li {
+  font-size: 1.2em;
+}
+
 ol {
-  width: 40%;
+  width: 30%;
   margin: auto;
+  text-align: center;
+}
+
+.fila-labo:display {
+  transition: width 2s;
+}
+
+.compu {
+  background: #c62828;
+  color: white;
+}
+
+.mante {
+  background: #6d4c41;
+  color: white;
+}
+
+.desa {
+  background: #0e668d;
+  color: white;
 }
 
 section {
   display: flex;
   justify-content: center;
+}
+
+.check-group {
+  margin: 4px;
+  text-align: center;
+}
+
+.fila-labo, .parte {
+  border: 2px solid #737473;
+}
+
+.parte {
+  margin: 15px 0;
+  padding: 5px
 
 }
 
@@ -32,7 +69,39 @@ section {
   justify-content: center;
 }
 
+button {
+  height: 30px;
+  background: #558b2f;
+  margin: inherit;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#footer {
+  color: black;
+  background-color: #b2dfdb;
+  margin: inherit;
+  width: auto;
+
+}
+
 .nota {
   text-align:center;
-  margin: 4px
+  margin: 8px
+}
+
+input {
+  width: 6%;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Para quitar las arrow of input type number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
