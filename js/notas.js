@@ -89,7 +89,7 @@ function colocarEntradasNotas() {
   }
   if (contadorMaterias[4] > 0 ) {
     res = res + `<div class="nota">
-      <label for="uml">Modelado aplicaciones web🖼: </label>
+      <label for="uml">Modelado aplicaciones web🎴: </label>
       <input type="text" id="nota-uml" name="uml" value="" maxlength="5" onkeypress="return isNumber(event)">
     </div>`
   }
@@ -105,7 +105,7 @@ function colocarEntradasNotas() {
       <input type="text" id="nota-electronicaT" name="electronicaT" value="" maxlength="5" onkeypress="return isNumber(event)">
     </div>
     <div class="nota">
-      <label for="electronicaP">Electronica (PRACTICO)🛠: </label>
+      <label for="electronicaP">Electronica (PRACTICO)🔧: </label>
       <input type="text" id="nota-electronicaP" name="electronicaP" value="" maxlength="5" onkeypress="return isNumber(event)">
     </div>`
   }
