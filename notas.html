@@ -69,6 +69,10 @@
           <section>
             <div class="notas">
                 <p class="text-danger">Seleccione al menos un laboratorio</p>
+                <div class="nota">
+                  <label for="meritos">Meritos🎓: </label>
+                  <input type="button" id="nota-meritos" name="meritos" value="" maxlength="5" onkeypress="return isNumber(event)">
+                </div>
             </div>
           </section>
         </div>
@@ -81,7 +85,7 @@
     <div class="modal" id="modal-one" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-header">
-          <h2>Las respuestas son...:</h2>
+          <h2>Las respuestas son... :</h2>
           <a href="#close" aria-hidden="true">❌</a>
         </div>
         <div class="modal-body">
