@@ -54,10 +54,6 @@ function controlarContadorMaterias(materias, condicion) {
   }
 }
 
-function borrar(e) {
-  alert(e.data)
-  console.log(e)
-}
 
 function colocarEntradasNotas() {
   var res = ""
@@ -65,59 +61,59 @@ function colocarEntradasNotas() {
   if (contadorMaterias[0] > 0 ) {
     res = res + `<div class="nota">
       <label for="meritos">Meritos🎓: </label>
-      <input type="text" id="nota-meritos" name="meritos" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-meritos" name="meritos" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[0] > 0 ) {
     res = res + `<div class="nota">
       <label for="linux">Linux🐧: </label>
-      <input type="text" id="nota-linux" name="linux" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-linux" name="linux" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[1] > 0 ) {
     res = res + `<div class="nota" >
       <label for="redes">Redes nivel intermedio📡: </label>
-      <input type="text" id="nota-redes" name="redes" value="" maxlength="5" onkeypress="return isNumber(event)" oninput="return borrar(event)">
+      <input type="text" id="nota-redes" name="redes" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[2] > 0 ) {
     res = res + `<div class="nota">
       <label for="base"> Base de datos💾: </label>
-      <input type="text" id="nota-base" name="base" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-base" name="base" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[3] > 0 ) {
     res = res + `<div class="nota">
       <label for="progra"> programacion por internet💻: </label>
-      <input type="text" id="nota-progra" name="progra" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-progra" name="progra" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[4] > 0 ) {
     res = res + `<div class="nota">
       <label for="uml">Modelado aplicaciones web🎴: </label>
-      <input type="text" id="nota-uml" name="uml" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-uml" name="uml" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[5] > 0 ) {
     res = res + `<div class="nota">
       <label for="ensamblaje"> Ensamblaje y mantenimiento⚙: </label>
-      <input type="text" id="nota-ensamblaje" name="ensamblaje" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-ensamblaje" name="ensamblaje" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[6] > 0 ) {
     res = res + `<div class="nota">
       <label for="electronicaT"> Electronica (TEORICO)📖: </label>
-      <input type="text" id="nota-electronicaT" name="electronicaT" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-electronicaT" name="electronicaT" value="" maxlength="5" oninput="return isNumber(event)">
     </div>
     <div class="nota">
       <label for="electronicaP">Electronica (PRACTICO)🔧: </label>
-      <input type="text" id="nota-electronicaP" name="electronicaP" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-electronicaP" name="electronicaP" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[7] > 0 ) {
     res = res + `<div class="nota">
       <label for="didactica">Didactica👩‍🏫: </label>
-      <input type="text" id="nota-didactica" name="didactica" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-didactica" name="didactica" value="" maxlength="5" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[0] === 0 && contadorMaterias[1] === 0 && contadorMaterias[2] === 0 && contadorMaterias[3] === 0 && contadorMaterias[4] === 0 && contadorMaterias[5] === 0 && contadorMaterias[6] === 0 ) {
@@ -202,16 +198,18 @@ function createListItem(cargo, clase, nota) {
 }
 
 function isNumber(e) {
-  var res = false
+  var res = true
   var numero = document.querySelector("#"+e.target.id).value
-  const entrada = parseInt(e.charCode)
-  if (entrada === 46 || entrada >= 48 && entrada <= 57) {
+  const entrada = e.data
+  if (entrada === "." || parseInt(entrada) >= 0 && parseInt(entrada) <= 9) {
     // In this point entrada is a Number :D
-    console.log(e)
-    numero = parseInt(numero + e.key)
-    if ( isNaN(numero) || numero >= 0 && numero <= 100 ){
-      res = true;
+    if ( parseInt(numero) >= 0 && parseInt(numero) <= 100 ){
+      res = false;
     }
+  }
+  if (res && e.inputType !== "deleteContentBackward") {
+    numero = numero.substring(0, numero.length - 1)
+    document.querySelector("#"+e.target.id).value = numero
   }
   return res;
 }
