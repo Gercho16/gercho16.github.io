@@ -12,11 +12,11 @@ h1, p, h2{
 }
 
 p, label, li {
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 ol {
-  width: 30%;
+  width: 50%;
   margin: auto;
   text-align: center;
 }
@@ -78,6 +78,10 @@ button {
   font-weight: bold;
 }
 
+.btn-cerrar{
+  background: #d00000;
+}
+
 #footer {
   color: black;
   background-color: #b2dfdb;
@@ -92,7 +96,7 @@ button {
 }
 
 input {
-  width: 13%;
+  width: 15%;
   font-size: 1.5rem;
   text-align: center;
   height: 1.2rem;
@@ -112,8 +116,64 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
   }
 
+  .fila-labo {
+    margin: 10px 0;
+  }
+
   .class="check-button" {
     height: 1.2rem;
   }
+}
 
+/* styles for modal */
+.modal:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+.modal:target:before {
+  display: block;
+}
+.modal-dialog {
+  background: #101c28;
+  border: #333 solid 1px;
+  border-radius: 5px;
+  margin-left: -200px;
+  position: fixed;
+  left: 50%;
+  top: -100%;
+  z-index: 11;
+  width: 360px;
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.modal:target .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+
+.modal-header {
+  display: flex
+}
+
+.modal-header > h2 {
+  width: 90%
+}
+
+.modal-header > a {
+  border: 2px solid white;
 }

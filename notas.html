@@ -8,22 +8,22 @@
   </head>
   <body>
     <h1>Calculadora de notas para Auxiliar de Servicio</h1>
-    <p>La siguiente calcula las notas para de Auxiliares y administrador de los laboratorios de:</p>
+    <!-- <p>La siguiente calcula las notas para de Auxiliares y administrador de los laboratorios de:</p>
     <ol>
       <li class="compu">Laboratorio de Computación</li>
       <li class="mante">Laboratorio de Mantenimiento</li>
       <li class="desa">Laboratorio de Desarrollo</li>
     </ol>
-    <h2>Llene los campos del formulario, para poder calcular sus notas</h2>
+    <h2>Llene los campos del formulario, para poder calcular sus notas</h2> -->
     <section id="formulario">
-      <form class="" action="index.html" method="post">
+      <form class="" >
         <div class="parte">
           <p>Seleccione los laboratorios que se postulo</p>
           <div id="seleccionar-items" class="container">
             <div class="fila-labo compu">
               <div class="check-group">
-                <input type="checkbox" class="check-button" name="check-note-compu" value="" onclick="checkAdmComputo()">
-                <label for="check-note-compu">Laboratorio de Computo</label>
+                <input type="checkbox" class="check-button check-compu" name="check-note-compu" value="" onclick="checkAdmComputo()">
+                <label for="check-note-compu">Laboratorio de Computo ☁</label>
               </div>
               <hr>
               <div class="check-group">
@@ -34,8 +34,8 @@
             </div>
             <div class="fila-labo mante">
               <div class="check-group">
-                <input type="checkbox" class="check-button" name="check-note-mante" value="" onclick="checkMateriasMante()">
-                <label for="check-note-mante">Laboratorio de Mantenimiento</label>
+                <input type="checkbox" class="check-button check-mante" name="check-note-mante" value="" onclick="checkMateriasMante()">
+                <label for="check-note-mante">Laboratorio de Mantenimiento 🛠</label>
               </div>
               <hr>
               <div class="check-group">
@@ -49,8 +49,8 @@
             </div>
             <div class="fila-labo desa">
               <div class="check-group">
-                <input type="checkbox" class="check-button" name="check-desa" value="" onclick="checkMateriasDesa()">
-                <label for="check-desa">Laboratorio de Desarrollo</label>
+                <input type="checkbox" class="check-button check-desa" name="check-desa" value="" onclick="checkMateriasDesa()">
+                <label for="check-desa">Laboratorio de Desarrollo 💻</label>
               </div>
               <p></p>
               <hr>
@@ -65,67 +65,41 @@
           </div>
         </div>
         <div class="parte">
-          <p>Finalmente escriba los puntos que tenga</p>
+          <p>Escriba los puntos que tenga 😅</p>
           <section>
-            <div class="">
+            <div class="notas">
                 <p class="text-danger">Seleccione al menos un laboratorio</p>
-              <div class="nota">
-                <label for="meritos">Meritos: </label>
-                <input type="text" id="nota-meritos" name="meritos" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota">
-                <label for="linux">Linux: </label>
-                <input type="text" id="nota-linux" name="linux" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota" >
-                <label for="redes">Redes nivel intermedio: </label>
-                <input type="text" id="nota-redes" name="redes" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota">
-                <label for="base"> Base de datos: </label>
-                <input type="text" id="nota-base" name="base" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota">
-                <label for="progra"> programacion por internet: </label>
-                <input type="text" id="nota-progra" name="progra" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota">
-                <label for="uml">Modelado aplicaciones web: </label>
-                <input type="text" id="nota-uml" name="uml" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota">
-                <label for="ensamblaje"> Ensamblaje y mantenimiento de computadora: </label>
-                <input type="text" id="nota-ensamblaje" name="ensamblaje" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota">
-                <label for="electronicaT"> Electronica aplicada(TEORICO): </label>
-                <input type="text" id="nota-electronicaT" name="electronicaT" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota">
-                <label for="electronicaP"> Electronica aplicada(PRACTICO): </label>
-                <input type="text" id="nota-electronicaP" name="electronicaP" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
-              <div class="nota">
-                <label for="didactica">Didactica: </label>
-                <input type="text" id="nota-didactica" name="didactica" value="" maxlength="4" onkeypress="return isNumber(event)">
-              </div>
             </div>
           </section>
         </div>
         <div class="container parte">
-          <button type="button" name="button" >Calcular nota</button>
+          <button type="button" name="button" onclick="calcular()">Calcular nota</button>
         </div>
       </form>
     </section>
-    <section>
-      <div class="container parte" id="respuesta-notas">
-        <h2>Las respuestas son: </h2>
+    <!-- Modal -->
+    <div class="modal" id="modal-one" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h2>Las respuestas son🥁:</h2>
+          <a href="#close" aria-hidden="true">❌</a>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <div class="container">
+            <button type="button" class="btn-cerrar" name="button" onclick="window.location.href = '#close'">Cerrar</button>
+          </div>
+          <a href="#close" type="button"></a>
+        </div>
       </div>
-    </section>
+    </div>
+    <!-- /Modal -->
     <script type="text/javascript" src="./js/notas.js"></script>
     <section id="footer">
       <p>Pagina hecha por: <a href="./index.html">codingFer</a></p>
-      <p>, 2020 Copyright © Todos los Derechos Reservado</p>
+      <p> 2020 Copyright © Todos los Derechos Reservado</p>
     </section>
   </body>
 </html>
