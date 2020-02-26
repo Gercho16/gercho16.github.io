@@ -61,59 +61,57 @@ function colocarEntradasNotas() {
   if (contadorMaterias[0] > 0 ) {
     res = res + `<div class="nota">
       <label for="meritos">Meritos🎓: </label>
-      <input type="text" id="nota-meritos" name="meritos" value="" maxlength="5" oninput="return isNumber(event)">
-    </div>`
-  }
-  if (contadorMaterias[0] > 0 ) {
-    res = res + `<div class="nota">
+      <input type="tel" id="nota-meritos" name="meritos" oninput="return isNumber(event)">
+    </div>
+    <div class="nota">
       <label for="linux">Linux🐧: </label>
-      <input type="text" id="nota-linux" name="linux" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-linux" name="linux" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[1] > 0 ) {
     res = res + `<div class="nota" >
       <label for="redes">Redes nivel intermedio📡: </label>
-      <input type="text" id="nota-redes" name="redes" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-redes" name="redes" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[2] > 0 ) {
     res = res + `<div class="nota">
       <label for="base"> Base de datos💾: </label>
-      <input type="text" id="nota-base" name="base" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-base" name="base" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[3] > 0 ) {
     res = res + `<div class="nota">
       <label for="progra"> programacion por internet💻: </label>
-      <input type="text" id="nota-progra" name="progra" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-progra" name="progra" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[4] > 0 ) {
     res = res + `<div class="nota">
       <label for="uml">Modelado aplicaciones web🎴: </label>
-      <input type="text" id="nota-uml" name="uml" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-uml" name="uml" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[5] > 0 ) {
     res = res + `<div class="nota">
       <label for="ensamblaje"> Ensamblaje y mantenimiento⚙: </label>
-      <input type="text" id="nota-ensamblaje" name="ensamblaje" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-ensamblaje" name="ensamblaje" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[6] > 0 ) {
     res = res + `<div class="nota">
       <label for="electronicaT"> Electronica (TEORICO)📖: </label>
-      <input type="text" id="nota-electronicaT" name="electronicaT" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-electronicaT" name="electronicaT" oninput="return isNumber(event)">
     </div>
     <div class="nota">
       <label for="electronicaP">Electronica (PRACTICO)🔧: </label>
-      <input type="text" id="nota-electronicaP" name="electronicaP" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-electronicaP" name="electronicaP" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[7] > 0 ) {
     res = res + `<div class="nota">
       <label for="didactica">Didactica👩‍🏫: </label>
-      <input type="text" id="nota-didactica" name="didactica" value="" maxlength="5" oninput="return isNumber(event)">
+      <input type="tel" id="nota-didactica" name="didactica" oninput="return isNumber(event)">
     </div>`
   }
   if (contadorMaterias[0] === 0 && contadorMaterias[1] === 0 && contadorMaterias[2] === 0 && contadorMaterias[3] === 0 && contadorMaterias[4] === 0 && contadorMaterias[5] === 0 && contadorMaterias[6] === 0 ) {
@@ -207,14 +205,25 @@ function isNumber(e) {
       res = false;
     }
   }
+
   if (res && e.inputType !== "deleteContentBackward") {
     numero = numero.substring(0, numero.length - 1)
     document.querySelector("#"+e.target.id).value = numero
   }
+  if ( numero.length > 5) {
+    console.log(numero.charAt(numero.length - 1))
+    if ( parseInt(numero.charAt(numero.length - 1) ) >= 5) {
+      numero = numero.substring(0, numero.length - 1)
+      document.querySelector("#"+e.target.id).value = numero
+    } else {
+      document.querySelector("#"+e.target.id).value = parseFloat(numero).toFixed(2)
+    }
+  }
   return res;
 }
 
-if (navigator.userAgent.match(/Android/i)) {
-  // alert('hola')
-  // document.querySelector('#nota-meritos').type = 'number'
-}
+// This is a if for question is a mobil device
+// if (navigator.userAgent.match(/Android/i)) {
+//   // alert('hola')
+//   // document.querySelector('#nota-meritos').type = 'number'
+// }
