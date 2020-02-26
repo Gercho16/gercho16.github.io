@@ -54,6 +54,11 @@ function controlarContadorMaterias(materias, condicion) {
   }
 }
 
+function borrar(e) {
+  alert(e.data)
+  console.log(e)
+}
+
 function colocarEntradasNotas() {
   var res = ""
 
@@ -72,7 +77,7 @@ function colocarEntradasNotas() {
   if (contadorMaterias[1] > 0 ) {
     res = res + `<div class="nota" >
       <label for="redes">Redes nivel intermedio📡: </label>
-      <input type="text" id="nota-redes" name="redes" value="" maxlength="5" onkeypress="return isNumber(event)">
+      <input type="text" id="nota-redes" name="redes" value="" maxlength="5" onkeypress="return isNumber(event)" oninput="return borrar(event)">
     </div>`
   }
   if (contadorMaterias[2] > 0 ) {
@@ -202,6 +207,7 @@ function isNumber(e) {
   const entrada = parseInt(e.charCode)
   if (entrada === 46 || entrada >= 48 && entrada <= 57) {
     // In this point entrada is a Number :D
+    console.log(e)
     numero = parseInt(numero + e.key)
     if ( isNaN(numero) || numero >= 0 && numero <= 100 ){
       res = true;
